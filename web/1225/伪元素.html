@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* 伪元素：在页面上显示的但不是一个标签的元素 */
+
+            /* 用于显示一些内容在页面上，和标签一样的作用一样 */
+            .rv{
+                border: solid 1px black;
+            }
+            .box1{
+                width: 300px;
+                height:300px;
+            }
+            /* 默认是一个行内元素 可以转换元素类型 */
+            .box1::before{
+                /* 只能插入文本  没有content伪元素就消失了*/
+                content: "123";
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="box1 rv"><img src="./哔哩哔哩.png"/></div>
+
+    </body>
+</html>

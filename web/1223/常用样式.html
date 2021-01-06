@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div{
+            /* 修改字体 */
+            font-family: '华文行楷';
+            /* 字体大小 */
+            font-size: 200px;
+            /* 加粗 */
+            font-weight: bold;
+            /* 颜色 */
+            color: cyan;
+
+            /* 英语单词间距离 */
+            word-spacing: 100px;
+
+            /* 字符间距 */
+            letter-spacing: 100px;
+
+            /* 段落缩进 2em：空两个字符 */
+            text-indent: 50px;
+
+            /* 对英文字母大小写 
+            capitalize：首字母大写 
+            lowercase:全部小写
+            upppercase：全部大写
+            */
+            text-transform: lowercase;
+        }
+        #text1{
+            text-decoration: dashed;            
+        }
+        #text2{
+            width: 500px;
+            /* 让内容强制不换行 */
+            white-space: nowrap;
+            /* 溢出内容的处理，hidden：隐藏；scroll：显示滚动条 */
+            overflow-x: hidden;
+            /* 设置溢出文本的显示样式 ellipsis:显示成省略号 */
+            text-overflow: ellipsis;       
+        }
+
+        #div1 {
+            /* 盒子模型的控制属性 */
+            /* 修改内容宽 */
+            width: 200px;
+            /* 修改内容高 */
+            height: 200px;
+
+            /* 内边距 */
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            /* 可以直接设置padding，能够同时修改上下左右的内边距 */
+
+            /* 边框 */
+            /* border-top: 10px double green;
+            border-bottom: 5px dotted yellow;
+            border-left: 3px dashed red;
+            border-right: 1px solid black; */
+            /* 可以直接设置border，能够同时修改上下左右的边框 */
+            /* 边框样子 */
+            border-style: solid;
+            /* 边框宽度 */
+            border-width: 50px;
+            /* 边框颜色 */
+            border-color: blue;
+            /* 边框半径 */
+            border-radius: 50px;
+
+            /* 外边距 */
+            /* margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px; */
+            /* 可以直接设置margin，能够同时修改上下左右的外边距 */
+            /* 复合赋值 */
+            /* 赋值4个的情况 从top开始，将后面的值，沿顺时针，依次给 top right bottom left 进行赋值 */
+            margin: 10px 20px 30px 40px;
+            /* 赋值2个的情况 从top开始，将第一个参数赋值给 top、bottom；第二个参数赋值给 left、right */
+            margin: 10px 20px;
+            
+            /* 显示类型 */
+            /* 待选项：block，inline，none，inline-block，flex */
+            display: block;
+        }
+
+        #div2 {
+            /* font-size: 24px; */
+            width: 200px;
+
+            /* 横向居中 */
+            margin-left: auto;
+            margin-right: auto;
+            /* 下面的代码无法纵向居中 */
+            /* margin-top: auto;
+            margin-bottom: auto; */
+        }
+
+        #div3 {
+            /* 背景 */
+            width: 200px;
+            height: 400px;
+
+            /* 设置背景的复合属性 */
+            /* background: red url('./1.png'); */
+
+            /* 背景色 */
+            background-color: blue;
+            /* 背景图 */
+            /* background-image: url('./1.png'); */
+            background-image: url('./1.jpg');
+            /* background-image: url('http://img.alicdn.com/tfscom/i4/654230132/O1CN011CqUjXBxyNTXTMy_!!654230132.jpg_180x180xzq90.jpg_.webp'); */
+
+            /* 重复背景图 */
+            /* 备选项：
+                repeat：横纵重复
+                repeat-x：横向重复
+                repeat-y：纵向重复
+                no-repeat：不重复
+                round：自动拉伸平铺填满
+             */
+            background-repeat: no-repeat;
+
+
+            /* 背景图片大小 */
+            /* 保持背景图的横纵比，不一定显示整张图片，多出的图片裁掉 */
+            /* background-size: cover; */
+            /* 保持背景图的横纵比，一定会显示整张图片，多余的空间留白*/
+            /* background-size: contain; */
+
+            /* 背景图片的显示区域（类似图片的平移） */
+            /* 默认padding-box，从内边距开始添加背景 */
+            /* background-origin: padding-box; */
+            /* 从边框开始添加背景 */
+            /* background-origin: border-box; */
+            /* 从文字内容开始添加背景 */
+            /* background-origin: content-box; */
+
+            /* 背景图片和背景颜色的显示区域（类似截图） */
+            /* background-clip: padding-box; */
+            /* background-clip: border-box; */
+            /* background-clip: content-box; */
+
+            /* 背景图大小 */
+            /* 备选项：
+                auto：显示图片原始大小
+                contain（包含、容纳）：图片的最长边等于容器的最短边，另一边等比例进行缩放
+                cover（覆盖）：图片的最短边等于容器的最长边，另一边等比例进行缩放
+             */
+            background-size: auto;
+
+            /* 设置背景图的左上角位置 */
+            /* 备选项：
+                border-box: 将背景图左上角位置放到边框的左上角
+                content-box：将背景图左上角位置放到内容的左上角
+                padding-box：将背景图左上角位置放到内边距的左上角
+             */
+            background-origin: padding-box;
+
+            /* 裁剪背景图 */
+            /* 备选项：
+                content-box：按照内容content的宽高进行裁剪
+                border-box：背景颜色或图片填充到边框的位置
+                padding-box：背景颜色或图片填充到内边距的位置
+             */
+            background-clip: content-box;
+
+            /* 将背景图填充进文字的写法： */
+            /* background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent; */
+
+            /* 背景图位置 */
+            /* 备选项：top bottom left right center */
+            /* background-position: center; */
+            /* 可以填入具体数值，分别代表，距离整个容器的左上角的横向和纵向距离 */
+            background-position: 20px 50px;
+
+        }
+        /* 补充img标签的等比例缩放 */
+        /* img标签只需指定一个宽或者一个高，剩下一边会自动等比例缩放 */
+        img {
+            width: 100px;
+            /* height: 200px; */
+        }
+    </style>
+</head>
+<body>
+    <div> 你好，世界！</div>
+    <div id="text1"> 你好 世界！</div>
+    <div id="text2"> 你好 世界！你好 世界你好 世界你好 世界你好 世界rsdgvnsldk.nv考虑到佛偶尔来</div>
+    <div id="div1">
+        hello world !!!
+    </div>
+    <!-- 父节点中使用line-height，使内容进行上下居中，但是内容div不能设置高度 -->
+    <div style="line-height: 200px;">
+        <div id="div2">hello world !!!</div>
+    </div>
+    <div id="div3">
+        hello world !!!
+    </div>
+    <div>
+        <img src="./1.jpg"/>
+    </div>
+
+
+</body>
+</html>

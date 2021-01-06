@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        .rv {
+            border: red solid 2px;
+            height: 400px;
+        }
+
+        .box1 {
+            display: flex;
+            margin-top: 35px;
+            margin-left: 50px;
+            border-radius: 10px;
+            width: 250px;
+            height: 100px;
+            background-color: #335D2D;
+            color: #FE7171;
+        }
+
+        .box1::before {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            content: '来自未来的消息';
+            display: block;
+            color: #cbcbcb;
+        }
+
+        .box1::after {
+            content: '';
+            display: block;
+            /* background-color: green; */
+            /* width: 0;
+            height: 0; */
+            margin-left: -150px;
+            margin-top: 100px;
+            /* border-top: 17px solid green;
+            border-bottom: 17px solid rgba(0, 0, 0, 0);
+            border-left: 17px solid green;
+            border-right: 17px solid rgba(0, 0, 0, 0); */
+
+            border-color: #335D2D transparent transparent #335D2D;
+            border-width: 17px;
+            border-style: solid;
+        }
+
+        .box2 {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rv">
+        <div class="box1">
+            <div class="box2">你好，今天天气真不错！</div>
+        </div>
+    </div>
+</body>
+
+</html>

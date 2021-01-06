@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: rgb(235, 223, 63);
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        body{
+            width: 2000px;
+            height:1000px;
+        }
+        .box2 {
+            background-color: rgb(51, 250, 94);
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            width: 400px;
+            height: 400px;
+            z-index: 1;
+        }
+
+        .box3 {
+            background-color: rgb(186, 39, 223);
+            position: relative;
+            left: 100px;
+            top: 100px;
+
+        }
+
+        .box4 {
+            background-color: rgb(33, 213, 236);
+            position: fixed;
+            top: 200px;
+            z-index: 0;
+        }
+        .box5 {
+            background-color: rgb(236, 33, 33);
+            position:absolute;
+            top: 300px;
+            z-index: 1;
+        }
+        .box6 {
+            background-color: rgb(236, 33, 168);
+            position:absolute;
+            left: 50px;
+            top: 300px;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">1</div>
+    <div class="box2">2
+        <div class="box box3">3</div>
+    </div>
+    <div class="box box4">4</div>
+    <div class="box box5">5</div>
+    <div class="box box6">6</div>
+</body>
+
+</html>
