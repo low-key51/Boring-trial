@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        input {
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 液晶显示屏 -->
+    <div>
+        <input class="h" value="00" />:<input class="m" value="00" />:<input class="s" value="00" /><button
+            onclick="confirm()">确认</button>
+    </div>
+    <!-- 控制面板 -->
+    <div>
+        <button onclick="startOrStopClock()">暂停/继续</button>
+    </div>
+</body>
+<script>
+    // 面向对象代码设计
+    // 以人的角度具体的观察世界
+    // 面向对象设计重点：如何抽象类，定义好类以后，思考该类具备哪些属性和行为
+
+    let ui = new UI()
+
+    // 秒针
+    function Second() {
+        // 计时器身份证
+        this.handler = -1
+        // 秒
+        this.time = 0
+        // 回调函数，用于进位的时候通知其他指针该进位了
+        this.onUpgrad = undefined
+        // 计时方法
+        this.run = () => {
+            this.handler = setTimeout(() => {
+                this.time++
+                // 判断进位
+                if (this.time >= 60) {
+                    // 进位，让分钟动
+                    if (this.onUpgrad) this.onUpgrad()
+                    // 清空表盘
+                    this.time = 0
+                }
+                ui.render()
+                this.run() // 递归调用，循环计时
+            }, 1000)
+        }
+        // 停止
+        this.stop = () => {
+            if (this.handler) {
+                clearTimeout(this.handler)
+                this.handler = -1 // 停止时设置handler为-1，代表计时器已停止
+            }
+        }
+        // 设置时间
+        this.setTime = (_time) => {
+            this.time = _time
+        }
+    }
+
+    // 分针
+    function Minute() {
+        this.onUpgrad = undefined
+        // 分
+        this.time = 0
+        // 计时
+        this.run = () => {
+            this.time++
+            // 判断进位
+            if (this.time >= 60) {
+                // 进位，让分钟动
+                if (this.onUpgrad) this.onUpgrad()
+                // 清空表盘
+                this.time = 0
+            }
+        }
+        // 设置时间
+        this.setTime = (_time) => {
+            this.time = _time
+        }
+    }
+
+    // 时针
+    function Hour() {
+        // 时
+        this.time = 0
+        // 计时
+        this.run = () => {
+            this.time++
+            // 判断进位
+            if (this.time >= 24) {
+                // 清空表盘
+                this.time = 0
+            }
+        }
+        // 设置时间
+        this.setTime = (_time) => {
+            this.time = _time
+        }
+    }
+
+    // 时钟
+    function Clock() {
+        // 三根计时针
+        this.second = new Second()
+        this.minute = new Minute()
+        this.hour = new Hour()
+
+        // 进行初始化配置
+        this.second.onUpgrad = () => {
+            this.minute.run()
+        }
+        this.minute.onUpgrad = () => {
+            this.hour.run()
+        }
+
+        // 设置时间
+        this.setTime = (hour, minute, second) => {
+            this.hour.setTime(hour)
+            this.minute.setTime(minute)
+            this.second.setTime(second)
+        }
+
+        // 判断时钟是否正在运行
+        this.isRunning = () => {
+            return this.second.handler !== -1
+        }
+
+        // 运行
+        this.run = () => {
+            this.second.run()
+        }
+
+        // 停止
+        this.stop = () => {
+            this.second.stop()
+        }
+    }
+
+    // ui对象，专门用于更新显示
+    function UI() {
+        this.render = () => {
+            let h = qs('.h')
+            let m = qs('.m')
+            let s = qs('.s')
+            h.value = clock.hour.time < 10 ? '0' + clock.hour.time : clock.hour.time
+            m.value = clock.minute.time < 10 ? '0' + clock.minute.time : clock.minute.time
+            s.value = clock.second.time < 10 ? '0' + clock.second.time : clock.second.time
+        }
+    }
+
+    function qs(selector) {
+        return document.querySelector(selector)
+    }
+
+    // 创建时钟
+    let clock = new Clock()
+
+    // 暂停或开始事件
+    function startOrStopClock() {
+        if (clock.isRunning()) {
+            clock.stop()
+        } else {
+            clock.run()
+        }
+    }
+
+    // 确认事件
+    function confirm() {
+        let h = qs('.h')
+        let m = qs('.m')
+        let s = qs('.s')
+        // todo 做参数验证
+        clock.setTime(Number(h.value), Number(m.value), Number(s.value))
+    }
+</script>
+
+</html>

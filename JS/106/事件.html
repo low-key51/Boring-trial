@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+<div>
+    <form action="http://www.baidu.com" method="get">
+    <button>提交</button>
+</form>
+</div>
+</body>
+<script>
+document.querySelector('button').addEventListener('click',(e)=>{
+e.preventDefault()
+e.stopPropagation()
+console.log('sssss')
+})
+document.querySelector('div').addEventListener('click',(e)=>{
+e.preventDefault()
+console.log('aaaaa')
+})
+document.body.addEventListener('click',(e)=>{
+e.preventDefault()
+console.log('llllll')
+})
+</script>
+</html>
