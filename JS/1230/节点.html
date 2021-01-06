@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <button>下载</button>
+    <table border="">
+        <tbody class="tb">
+            <tr>
+                <td>1-1</td>
+                <td>1-2</td>
+                <td>1-3</td>
+            </tr>
+            <tr>
+                <td>2-1</td>
+                <td>2-2</td>
+                <td>2-3</td>
+            </tr>
+            <tr>
+                <td>3-1</td>
+                <td>3-2</td>
+                <td>3-3</td>
+            </tr>
+        </tbody>
+       
+    </table>
+</body>
+<script>
+    let tb = document.querySelector('.tb')
+    let reslut = tb.children[1].children[2].innerText
+    console.log(reslut)
+
+    let img = document.createElement('img')
+    img.src = './1.jpg'
+    let td = tb.children[2].children[2]
+    td.appendChild(img)
+    
+    
+    let img2=document.createElement('img')
+    
+    img2.src = './2.jpg'
+    td.replaceChild(img2,td.children[0])
+
+    img.remove()
+
+
+    let btn=document.body.children[0]
+    btn.addEventListener('click',()=>{
+        let a=document.createElement('a')
+        a.href="./1.zip"
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+    })
+
+
+</script>
+
+</html>

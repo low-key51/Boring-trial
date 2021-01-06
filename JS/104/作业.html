@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <form>
+        姓名：<input class="name" /><br />
+        邮箱：<input class="email" /><br />
+        密码：<input class="pwd" /><br />
+        个性签名：<input class="signature" /><br />
+        群备注名：<input class="cname" /><br />
+    </form>
+    <input type="submit" class="sub" />
+</body>
+<script>
+    let name = document.querySelector('.name')
+    let email = document.querySelector('.email')
+    let pwd = document.querySelector('.pwd')
+    let sign = document.querySelector('.signature')
+    let cname = document.querySelector('.cname')
+    let sub = document.querySelector('.sub')
+    sub.addEventListener('click', () => {
+        name.value = name.value.trim()
+        if (email.value.indexOf('@') === -1) {
+            email.value = '输入有误'
+        }
+        if (pwd.value.length < 8 || pwd.value.length > 16) {
+            pwd.value = '输入有误'
+        }
+
+        if (sign.value.indexOf('共产党')) {
+            sign.value.replace('共产党', '***')
+        }
+
+        if (!(cname.value.startsWith('201102'))) {
+            cname.value = '不是以201102开头'
+        }
+    })
+
+</script>
+
+</html>

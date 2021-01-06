@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 用来展示拍的区域的样式 */
+        .div1 {
+            width: 100%;
+            height: 500px;
+            background-color: green;
+            border: 2px solid black;
+            overflow-x: hidden;
+            overflow-y: auto
+        }
+
+        /* 设置展示区域子元素布局 */
+        .div1>div {
+            float: left;
+        }
+
+        /* 每张牌区域样式 */
+        .div2 {
+            width: 200px;
+            height: 275px;
+            border: 1px solid rgb(63, 58, 58);
+            background-color: #ffffff;
+
+        }
+
+        /* 设置牌的花色样式 */
+        .div3 {
+            width: 110px;
+            height: 110px;
+            border: black solid 2px;
+        }
+
+        /* 红桃是图片的第一个可以省略 */
+        /* 黑桃 */
+        .spade {
+            background-position-x: -130px;
+        }
+
+        /* 梅花 */
+        .club {
+            background-position-y: -110px;
+        }
+
+        /* 方块 */
+        .diamond {
+            background-position-x: -130px;
+            background-position-y: -110px;
+        }
+
+        .club,
+        .diamond,
+        .heart,
+        .spade {
+            background-image: url(./花色图案.jpg);
+            background-repeat: no-repeat;
+        }
+
+
+        /* 设置点数的样式 */
+        span {
+            font-size: 50px;
+            font-weight: bolder;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="shuffle">洗牌</button><br />
+    <input class="cardNum" placeholder="请输入要抽取多少张牌" />
+    <button class="draw">抽牌</button><br /><br />
+    <div class="div1"></div>
+</body>
+<script>
+    //牌的花色
+    //  黑桃-spade、红心-heart、梅花-club、方块-diamond
+    let dc = ["spade", "heart", "club", "diamond"]
+    // 牌的点数
+    let point = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+
+    //先将大小王添加进扑克中
+    let pok = [{ "花色": "joker", "点数": "big" }, { "花色": "joker", "点数": "small" }]
+    //加入其他所有的牌
+    for (let i = 0; i < point.length; i++) {
+        for (let j = 0; j < dc.length; j++) {
+            pok.push({ "花色": dc[j], "点数": point[i] })
+        }
+    }
+
+    // 获取div
+    let div1 = document.querySelector('.div1')
+    //获取洗牌指令，并给按钮添加点击事
+    let shuffle = document.querySelector('.shuffle')
+    shuffle.addEventListener('click', () => {
+        pok.sort((item1, item2) => {
+            let r = Math.random() - 0.5
+            return r
+        })
+        div1.innerHTML = '<span class="red">洗牌已完成</span>'
+
+
+    })
+
+    //获取需要抽取牌的数量
+    let input = document.querySelector('.cardNum')
+    //获取抽牌指令，并给按钮添加点击事件
+    let draw = document.querySelector('.draw')
+    draw.addEventListener('click', () => {
+        // 定义一个数组存储抽出的牌
+        let newPok = []
+        // 用来存储抽来的牌在pok的索引
+        let index = []
+
+        // 判断输入是否有问题
+        let num = (Number)(input.value)
+        if (typeof (num) === "number" && num <= 54 && num >= 1 && num % 1 === 0) {
+            div1.innerHTML = ""
+            let n = input.value //需要抽取牌的数量
+            let random
+            // 去重
+            while (index.length <= n - 1) {
+                random = Math.floor(Math.random() * 54)
+                let re = index.indexOf(random)//indexOf函数返回为-1时，则数组中没有该元素
+                if (re === -1) {
+                    index.push(random)
+                }
+            }
+            // 插入所有抽出来的牌
+            for (let i = 0; i < index.length; i++) {
+                newPok.push(pok[index[i]])
+                let div2 = document.createElement('div')
+                if (newPok[i].花色 === "spade") {
+                    div2.innerHTML = '<div class="div2"><div class="div3 spade"></div><span>' + JSON.stringify(newPok[i].点数).substring(1, JSON.stringify(newPok[i].点数).length - 1) + '</span></div>'
+                } else if (newPok[i].花色 === "heart") {
+                    div2.innerHTML = '<div class="div2"><div class="div3 heart"></div><span  class="red">' + JSON.stringify(newPok[i].点数).substring(1, JSON.stringify(newPok[i].点数).length - 1) + '</span></div>'
+                } else if (newPok[i].花色 === "club") {
+                    div2.innerHTML = '<div class="div2"><div class="div3 club"></div><span>' + JSON.stringify(newPok[i].点数).substring(1, JSON.stringify(newPok[i].点数).length - 1) + '</span></div>'
+                } else if (newPok[i].花色 === "diamond") {
+                    div2.innerHTML = '<div class="div2"><div class="div3 diamond"></div><span   class="red">' + JSON.stringify(newPok[i].点数).substring(1, JSON.stringify(newPok[i].点数).length - 1) + '</span></div>'
+                } else if (newPok[i].点数 === "big") {
+                    div2.innerHTML = '<div class="div2"><span  class="red">JOKER </span></div>'
+                } else if (newPok[i].点数 === "small") {
+                    div2.innerHTML = '<div class="div2"><span> JOKER </span></div>'
+                }
+                div1.appendChild(div2)
+            }
+        } else {
+            div1.innerHTML = '<span class="red">输入有误，请输入1-54的整数</span>'
+        }
+
+    })
+
+
+</script>
+
+</html>

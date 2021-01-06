@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #2D8A55;
+        }
+
+        .div {
+            position: absolute;
+            display: flex;
+            top: 0px;
+            left: 0px;
+            width: 50px;
+            height: 30px;
+            background-color: #FF6149;
+        }
+
+        .div1 {
+            display: flex;
+            position: absolute;
+            bottom: 100px;
+            right: 100px
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">player</div>
+    <div class="div1">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="3" style="text-align: center;"><button class="up">up</button></td>
+                </tr>
+                <tr>
+                    <td><button class="left">left</button></td>
+                    <td><button class="down">down</button></td>
+                    <td><button class="right">right</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    let div = document.querySelector('div')
+    let up = document.querySelector('.up')
+    let down = document.querySelector('.down')
+    let left = document.querySelector('.left')
+    let right = document.querySelector('.right')
+    function getSize(str) {
+        let splits = str.split('px')
+        return splits.length === 1 ? 0 : Number(splits[0])
+    }
+    up.addEventListener('click', () => {
+        let p = getSize(div.style.top)
+        div.style.top = (p - 10) + 'px'
+    })
+    down.addEventListener('click', () => {
+        let p = getSize(div.style.top)
+        div.style.top = (p + 10) + 'px'
+    })
+    left.addEventListener('click', () => {
+        let p = getSize(div.style.left)
+        div.style.left = (p - 10) + 'px'
+    })
+    right.addEventListener('click', () => {
+        let p = getSize(div.style.left)
+        div.style.left = (p + 10) + 'px'
+    })
+
+</script>
+
+</html>

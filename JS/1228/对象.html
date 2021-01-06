@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    // object 对象
+    // 对象分为 json对象和 类实例
+
+    // json对象：
+    // 什么是json？
+    // json：javascript 轻量化数据结构
+    // json格式: 由花括号组成，key:value键值对描述属性的数据结构，详情见《demo.json》
+    // json对象：描述json格式的js对象
+    // 定义一个json对象如下：
+    let obj = { // 使用花括号定义
+        a: 1, // 使用 key：value 形式定义属性
+        b: 2,
+        name: '张三',
+        say: (msg) => {
+            console.log('我说了一句话，内容如下：')
+            console.log(msg)
+        }
+    }
+
+    // 访问对象：
+    // 通过变量名，使用 "." 点运算符，访问其属性
+    console.log(obj.name)
+    obj.name = '李四'
+    console.log(obj)
+    console.log(obj.say)
+
+    console.log(typeof obj)
+
+    // 声明类
+    function Human(_name) {
+        // 声明属性
+        this.name = _name
+
+        // 声明行为
+        this.sleep = function () {
+            console.log('正在睡觉')
+        }
+    }
+
+    // 创建类实例
+    let zhangSan = new Human('张三')
+    console.log(typeof zhangSan)
+
+    // 访问类实例
+    // 和访问json对象一样
+    console.log(zhangSan.name)
+    zhangSan.name = '张小三'
+    console.log(zhangSan.name)
+    zhangSan.sleep()
+
+    // js对象可以当作java中的map使用，如下：
+    // 类似javar put方法 map.put('key',value)，如下：
+    obj['age'] = 16
+    console.log(obj)
+    // 使用方括号索引进行取值
+    console.log(obj['age'])
+</script>
+
+</html>

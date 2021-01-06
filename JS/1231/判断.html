@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body></body>
+    <script>
+        let a=0
+        if(isNaN(a)){
+            console.log('不是一个数字')
+        }else{
+            console.log('是一个数字')
+        }
+        let b=""
+        if(typeof(b)=="string"){
+            console.log('是一个字符串')
+        a}else{
+            conscole.log('不是一个字符串')
+        }
+
+        switch (typeof(a)) {
+            case "number":
+                console.log('数字');
+                break;
+            case "string":
+                console.log('字符串');
+                break;
+            case "object":
+                console.log('对象');
+                break;
+            default:
+                console.log('都不是')
+                break;
+        }
+
+
+    </script>
+</html>

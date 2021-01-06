@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+</body>
+<script>
+    // 黑桃-spade、红心-heart、梅花-club、方块-diamond
+    let dc = ["spade", "heart", "club", "diamond"]
+    // 牌的点数
+    let point = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+
+    //先将大小王添加进扑克中
+    let pok = [{ "花色": "joker", "点数": "big" }, { "花色": "joker", "点数": "small" }]
+    //加入其他所有的牌
+    for (let i = 0; i < point.length; i++) {
+        for (let j = 0; j < dc.length; j++) {
+            pok.push({ "花色": dc[j], "点数": point[i] })
+        }
+    }
+    //打印所有的牌，看是否全部存在
+    console.log(pok)
+
+    //洗牌：通过sort排序函数的返回值特性和随机函数进行洗牌
+    pok.sort((item1, item2) => {
+        let r = Math.random() - 0.5
+        return r
+    })
+
+    // 抽牌
+    // 利用random生成随机数，并使用新数组存这些随机数，
+    // 并使用indexOf函数进行判断数组中是否已经存在该元素，从而达到去重的效果
+    let newPok = []
+    let index = []
+    let re
+    let n=8//需要抽取牌的数量
+    let random
+    while (index.length <= n-1) {
+        random = Math.floor(Math.random() * 54)
+        re = index.indexOf(random)//indexOf函数返回为-1时，则数组中没有该元素
+        if (re === -1) {
+            index.push(random)
+        }
+    }
+    for (let i = 0; i < index.length; i++) {
+        newPok.push(pok[index[i]])
+    }
+
+    //打印洗牌后的牌
+    console.log(pok)
+    // 打印抽取的牌
+    console.log(newPok)
+
+    //
+
+</script>
+
+</html>

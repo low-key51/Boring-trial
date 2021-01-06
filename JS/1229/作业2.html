@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <button class="btn1">显示输入框</button>
+            </td>
+            <td>
+                <button class="btn2">显示选择框</button>
+            </td>
+            <td>
+                <button class="btn3">显示单选框 </button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="div" style="width: 100px; height: 20px;">
+
+                </div>
+            </td>
+        </tr>
+
+
+
+    </table>
+
+</body>
+<script>
+    let btn1 = document.querySelector('.btn1')
+    let btn2 = document.querySelector('.btn2')
+    let btn3 = document.querySelector('.btn3')
+    let div = document.querySelector('.div')
+    btn1.addEventListener('click', () => {
+        div.innerHTML = '姓名： <input/>'
+    })
+    btn2.addEventListener('click', () => {
+        div.innerHTML = '爱好：<select class="sel">' +
+            '<option value="jump">跳</option>' +
+            '<option value="run">跑</option>' +
+            '<option value="beng">蹦</option> ' +
+            '</select>'
+    })
+    btn3.addEventListener('click', () => {
+        div.innerHTML = '性别：<br/>' +
+            '<label>男<input class="male" type="radio" name="sex" value="male" /></label>' +
+            '<label> 女<input class="female" type="radio" name="sex" value="female" /></label>'
+    })
+
+</script>
+
+</html>

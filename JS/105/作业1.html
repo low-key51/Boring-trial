@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    function clamp(num,min,max){
+        if(num<min){
+            return min
+        }else if(num>max){
+            return max
+        }else{
+            return num
+        }
+    }
+    function random(min, max){
+        return Math.round(min+Math.random()*(max-min))
+    }
+    function getLength(x, y){
+        return Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2))
+    }
+
+    let num=45
+    let min=10
+    let max=40
+    console.log(clamp(num,min,max))
+    console.log(random(min,max))
+    console.log(getLength(min,max))
+</script>
+</html>

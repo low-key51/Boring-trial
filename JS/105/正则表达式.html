@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    let regex = /^$/ 
+    regex = /\S/
+    regex = /^123(\S|\s)*/
+    regex = /(\S|\s)*万岁$/
+    regex = /^123*456$/
+    regex = /^123+456$/
+    regex = /^123?456$/
+    regex = /^123{2}456$/
+    regex = /^123{2,}456$/
+    regex = /^123{2,5}456$/
+
+    regex = /^1234+/g
+    let str = '12344444444'
+    console.log(str.match(regex))
+    
+    regex = /^1234+?/g
+    console.log(str.match(regex))
+    
+    regex = /good|bad/
+    str = 'items is not good' 
+    console.log(regex.test(str))
+    
+    regex = /^[xyz]ok/
+    
+    regex = /^[^xyz]ok/
+
+    regex = /[0-5][6-9]/ 
+    
+    regex = /[^0-5][^6-9]/
+
+    
+
+
+    regex = /^123(goodIdea)+789$/
+    
+    str = '123goodIdeagoodIdea789'
+    console.log(str.match(regex))
+    
+    regex = /^123(?:goodIdea)+789$/
+    console.log(str.match(regex))
+
+    regex = /Windows(?=95|98|2000|NT|PE)/
+    str = 'Windows95'
+    console.log(str.match(regex))
+    
+    regex = /Windows(?!95|98|2000|NT|PE)/
+    
+    regex = /(?<=95|98|2000|NT|PE)Windows/
+    str = 'PEWindows'
+    console.log(str.match(regex))
+    
+    // regex = /(?<!95|98|2000|NT|PE)Windows/
+
+
+</script>
+
+</html>

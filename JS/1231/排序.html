@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body></body>
+<script>
+
+    let userInfos = [
+        {
+            name: '小王',
+            pwd: '666666',
+            balance: 1234,
+            info: '消息'
+        },
+        {
+            name: '小明',
+            pwd: 'fjfjfjfjfj',
+            balance: 250,
+            info: 555
+        },
+        {
+            name: '小李',
+            pwd: '888888',
+            balance: 1024,
+            info: { x: 1, y: 2 }
+        }
+    ]
+
+
+
+    userInfos.sort((item1, item2) => {
+        let b = item1.balance > item2.balance ? 1 : (item1.balance === item2.balance ? 0 : -1)
+        return b
+    })
+
+    userInfos.sort((item1, item2) => {
+        if (item1.balance > item2.balance) {
+            return 1
+        } else if (item1.balance < item2.balance) {
+            return -1
+        } else {
+            return 0
+        }
+    })
+    console.log(userInfos)
+</script>
+
+</html>

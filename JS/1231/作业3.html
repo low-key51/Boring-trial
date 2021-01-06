@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .tab {
+            width: 100%;
+            height: 500px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+
+<body>
+    <table class="tab" border="">
+        <tbody>
+            <tr>
+                <td colspan="3" class="banker">庄家：
+                    <div></div>
+                    <button>拿牌</button>
+                    <button>停牌</button>
+                    <button>加倍</button>
+                    <button>分牌</button>
+                    <button>投降</button>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="3" rowspan="2"></td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan="2" class="player1">闲家1：
+                    <div></div>
+                    <button>拿牌</button>
+                    <button>停牌</button>
+                    <button>加倍</button>
+                    <button>分牌</button>
+                    <button>投降</button>
+
+                </td>
+                <td rowspan="2" class="player2">闲家2：
+                    <div></div>
+                    <button>拿牌</button>
+                    <button>停牌</button>
+                    <button>加倍</button>
+                    <button>分牌</button>
+                    <button>投降</button>
+
+                </td>
+                <td rowspan="2" class="player3">闲家3：
+                    <div></div>
+                    <button>拿牌</button>
+                    <button>停牌</button>
+                    <button>加倍</button>
+                    <button>分牌</button>
+                    <button>投降</button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    // 当所有的初始牌分发完毕后，如果玩家拿到的是A和T（无论顺序），就拥有黑杰克（Black Jack）；
+    // 若庄家的明牌为T，且暗牌为A，应直接翻开并拥有Black Jack；
+    // 如果庄家的明牌为A，则玩家可以考虑买不买保险（Insurance），保险金额是赌注的一半且不退。
+    // 此时，如果庄家的暗牌为10点牌（构成Black Jack），那么翻开此牌，购买保险的玩家得到1倍赌注；
+    // 如果庄家没有Black Jack则保持暗牌，玩家继续游戏。
+    // 若玩家为Black Jack且庄家为其他，玩家赢得1.5倍（或2倍，1赔2时）赌注；
+    // 若庄家为Black Jack且玩家为其他，庄家赢得赌注；若庄家和玩家均为Black Jack，平局，玩家拿回自己的赌注。
+
+    // 接下来是正常的拿牌流程：
+    // 首名非黑杰克玩家选择拿牌（Hit）、停牌（Stand）、加倍（Double）、分牌（Split，两牌相同时）
+    // 或投降（Surrender，庄家赢得一半赌注）；若选择拿牌，则后续只能选择拿牌或停牌。
+    // 在发牌的过程中，如果玩家的牌点数的和超过21，玩家就输了——叫爆掉（Bust），庄家赢得赌注（无论庄家之后的点数是多少）。
+    // 假如玩家没爆掉，又决定不再要牌了（停牌，或因加倍、投降而终止），则轮到下一名非黑杰克玩家选择。
+    // 当所有玩家停止拿牌后，庄家翻开暗牌，并持续拿牌直至点数不小于17（若有A，按最大而尽量不爆计算）。
+    // 假如庄家爆掉了，那他就输了，玩家赢得1倍赌注；否则那么比点数大小，大为赢。点数相同为平局，玩家拿回自己的赌注。
+
+    //牌的花色
+    //  黑桃-spade、红心-heart、梅花-club、方块-diamond
+    let dc = ["spade", "heart", "club", "diamond"]
+    // 牌的点数
+    let point = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+    //加入所有的牌
+    let pok = []
+    for (let i = 0; i < point.length; i++) {
+        for (let j = 0; j < dc.length; j++) {
+            pok.push({ "花色": dc[j], "点数": point[i] })
+        }
+    }
+    // 首名非黑杰克玩家选择拿牌（Hit）、停牌（Stand）、加倍（Double）、分牌（Split，两牌相同时）
+    // 或投降（Surrender，庄家赢得一半赌注）
+    let bdiv=document.querySelector('.banker>div')
+    let player1=document.querySelector('.player1')
+    let player2=document.querySelector('.player2')
+    let player3=document.querySelector('.player3')
+
+
+
+
+
+</script>
+
+</html>

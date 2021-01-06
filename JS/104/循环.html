@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>
+        for(let i=0;i<50;i++){
+            console.log(i)
+        }
+        let i=0
+        while(i<50){
+            console.log(i)
+            i++
+        }
+        do{
+            console.log(i)
+            i++
+        }while(i<50)
+        i=[
+            {
+            name:'ss',
+            age:15,
+            info:{
+                adress:'gggg',
+            },
+            sleep:()=>{
+                console.log('ddddrgfsd')
+            }
+        },
+            {
+            name:'dd',
+            age:18
+        },
+    ]
+
+    for(let item of i){
+        console.log(item)
+    }
+    for(let key in i[0]){
+        console.log(key)
+        console.log(i[0][key])
+    }
+    </script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .c{
+                color: aqua;
+            }
+            .bg{
+                background-color: burlywood;
+            }
+            .c1{
+                color:chartreuse;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg c"> hebojnbghfjdjsfdgbjsjgn</div>
+        <button>change</button>
+    </body>
+    <script>
+        let div=document.querySelector('div')
+        let btn=document.querySelector('button')
+        btn.addEventListener('click',()=>{
+            // div.style.color="green"
+            div.className="bg c1"
+        })
+    </script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>多选框</legend>
+            爱好：
+            <label>
+                <input class="run" type="checkbox" name="hab" value="run" />跑
+            </label>
+            <label>
+                <input class="jump" type="checkbox" name="hab" value="jump" />跳
+            </label>
+            <label>
+                <input class="sing" type="checkbox" name="hab" value="sing" />唱
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>单选框</legend>
+            性别：
+            <label>
+                男<input class="male" type="radio" name="sex" value="male" />
+            </label>
+            <label>
+                女<input class="female" type="radio" name="sex" value="female" />
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>下拉框</legend>
+            <select class="sel">
+                <option value="jump">跳</option>
+                <option value="run">跑</option>
+                <option value="beng">蹦</option>
+            </select>
+        </fieldset>
+        <input type="submit" />
+    </form>
+    <div class="box1" style="width: 400px;height: 400px;">
+
+    </div>
+</body>
+<script>
+    document.querySelector('.run').checked = true
+    document.querySelector('.male').checked = true
+    document.querySelector('.female').checked = true
+    document.querySelector('.sel').value = 'run'
+
+
+    // document.querySelector('.box1').innerText = '<a href="http://www.baidu.com">百度</a>'
+
+    //document.querySelector('.box1').innerHTML = '<a href="http://www.baidu.com">百度</a>'
+</script>
+
+</html>

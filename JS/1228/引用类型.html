@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    // 引用类型
+    // 应用类型的值，存储的是一个内存地址（内存指针）
+
+    // 引用类型在js中本质上只有 object（对象） 类型
+
+    // object 对象: json对象 类实例
+    let obj = {
+        a: 1,
+        b: 2
+    }
+
+    // 数组
+    let arr = []
+
+    // 函数
+    let fn = function () {
+
+    }
+
+    // 空引用
+    let a = null;
+
+    // 验证 object 是引用类型：
+
+    console.log(obj)
+
+    function checkObj(_obj) {
+        _obj.c = 3
+    }
+
+    checkObj(obj)
+
+    console.log(obj)
+
+</script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    function formatDate(date, pattern) {
+        let year = date.getFullYear()
+        let month = date.getMonth() + 1
+        let datem = date.getDate()
+        let hour = date.getHours()
+        let minutes = date.getMinutes()
+        let seconds = date.getSeconds()
+        let regex = /(?=.*yyyy)(?=.*MM)(?=.*DD)(?=.*HH)(?=.*mm)(?=.*ss)/
+        if (regex.test(pattern)) {
+            pattern = pattern.replace('yyyy', year)
+            pattern = pattern.replace('MM', month)
+            pattern = pattern.replace('DD', datem)
+            pattern = pattern.replace('HH', hour)
+            pattern = pattern.replace('mm', minutes)
+            pattern = pattern.replace('ss', seconds)
+        } else {
+            pattern = "第二个参数格式错误"
+        }
+        return pattern
+    }
+    let date = new Date()
+    let pattern = "yyyy-MM-DD HH-mm-ss"
+    console.log(formatDate(date, pattern))
+
+
+</script>
+
+</html>

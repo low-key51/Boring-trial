@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div>
+        <form method="POST">
+            <input class="my-input" type="text" /><br />
+            <input type="button" class="toNum" value="转换成数字" />
+            <input type="button" class="toBool" value="转换成布尔" />
+            <input type="button" class="toObject" value="转换成对象" /><br />
+
+        </form>
+    </div>
+</body>
+<script>
+    let input = document.querySelector('.my-input')
+
+    // 转数字
+    let num = document.querySelector('.toNum')
+    num.addEventListener('click', () => {
+
+        console.log(Number(input.value))
+    })
+    // 转布尔
+    let bool = document.querySelector('.toBool')
+    bool.addEventListener('click', () => {
+
+        console.log(Boolean(input.value))
+    })
+    // 转对象
+    let obj = document.querySelector('.toObject')
+    obj.addEventListener('click', () => {
+
+        // console.log(Object(input.value))
+        try {
+            console.log(JSON.parse(input.value))
+        } catch (e) {
+            console.log('不是json格式')
+        }
+        
+    })
+
+</script>
+
+</html>

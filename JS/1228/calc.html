@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+    <script>
+        function Calc(x,y){
+            this.add=x+y
+            this.sub=x-y
+            this.mult=x*y
+            this.divi=parseInt(x/y)
+        }
+        
+        let n=25
+        let m=60
+        let a=new Calc(n,m)
+        //alert(n+'和'+m+'的运算:\n'+'加: '+a.add+'\n除: '+a.divi+'\n乘: '+a.mult+'\n减: '+a.sub)
+        console.log(a.add)
+        console.log(a.mult)
+        console.log(a.sub)
+        console.log(a.divi)
+
+        // function Calc(){
+        //     this.add=(x,y)=>{
+        //         return x+y
+        //     }
+        //     this.sub=(x,y)=>{
+        //         return x-y
+        //     }
+        //     this.mult=(x,y)=>{
+        //         return x*y
+        //     }
+        //     this.div=(x,y)=>{
+        //         return x/y
+        //     }
+        // }
+
+        // let c=new Calc()
+        // console.log(c.add(1,2))
+        // console.log(c.sub(1,2))
+        // console.log(c.mult(1,2))
+        // console.log(c.div(1,2))
+    </script>
+</html>
