@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html data-log-pv='{"mpc":8}'>
+    <head>
+        <title></title>
+        <meta http-equiv="Cache-Control" content="no-transform" /> 
+<meta http-equiv="Cache-Control" content="no-siteapp" /> 
+<meta name="copyright" content="Copyright ? 2017 Sohu.com Inc. All Rights Reserved." />
+<meta name="mediaid" content=""/>
+<meta property="og:type" content="news"/>
+<meta property="og:image" content="${mpNews.image}"/>
+<meta property="og:url" content="www.sohu.com/a/436123187_119038"/>
+<meta property="og:release_date" content="2020-12-04 05:06"/>
+<meta itemprop="dateUpdate" content="2020-12-04 05:06" />
+<meta itemprop="datePublished" content="2020-12-04 05:06" />
+<link rel="canonical" href="http://www.sohu.com/a/436123187_119038"/>
+<link rel="alternate" media="only screen and(max-width: 640px)" href="m.sohu.com/a/436123187_119038"/>
+<meta name="data-spm" content="smpc">
+<meta name="renderer" content="webkit"> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1" />
+<link rel="icon" href="//statics.itc.cn/web/static/images/pic/sohu-logo/favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="//statics.itc.cn/web/static/images/pic/sohu-logo/favicon.ico" type="image/x-icon"/>
+<link rel="apple-touch-icon" sizes="57x57" href="//statics.itc.cn/web/static/images/pic/sohu-logo/logo-57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="//statics.itc.cn/web/static/images/pic/sohu-logo/logo-72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="//statics.itc.cn/web/static/images/pic/sohu-logo/logo-114.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="//statics.itc.cn/web/static/images/pic/sohu-logo/logo-144.png" />
+<link href="//statics.itc.cn/web/static/css/main-b357e1ceb6.css" rel="stylesheet"/>
+<!--[if lt IE 9]>
+<script src="//statics.itc.cn/web/static/js/es5-shim-08e41cfc3e.min.js"></script>
+<script src="//statics.itc.cn/web/static/js/es5-sham-1d5fa1124b.min.js"></script>
+<script src="//statics.itc.cn/web/static/js/html5shiv-21fc8c2ba6.js"></script>
+<link href="//statics.itc.cn/web/static/css/ie8hack-9dce3c3b96.css" rel="stylesheet" />
+
+    </head>     
+            
+    <body class="article-page" data-region="140" data-spm="content" data-newsid="436123187">
+<article class="article" id="mp-editor">
+          <p data-role="original-title" style="display:none">原标题：骄傲！五星红旗首次在月球“独立展示”！</p>
+            <p>中国青年报客户端北京12月4日电（中青报？中青网记者 邱晨辉）12月3日23时10分，嫦娥五号上升器3000N发动机工作约6分钟，成功将携带样品的上升器送入到预定环月轨道。这是我国首次实现地外天体起飞。</p> 
+<p>点火起飞前，着上组合体实现月面国旗展开以及上升器、着陆器的解锁分离。此次国旗展开，是我国在月球表面首次实现国旗的“独立展示”。</p> 
+<p align="center"><img src="//p8.itc.cn/q_70/images03/20201204/74fea688eebd44248e0ea714851b8ab7.gif" /></p> 
+<p align="center">（我国在月球表面首次实现国旗“独立展示”示意动画）</p> 
+<p>国旗能够实现独立展示，主要依靠月面国旗展示系统辅助。该系统由中国航天科工集团研制，由月面国旗、压紧释放装置、展开机构三部分组成，长约半米。系统在折叠状态下随探测器升空，着陆月球后按照指令解锁打开。</p> 
+<p>中国航天科工研制专家告诉记者，国旗展示系统布置在嫦娥五号着陆器舱外，热环境、空间环境等条件恶劣，需采取多种环境适应性措施确保其正常工作。作为彰显我国重大科技创新活动的标志性动作，国旗展示系统必须实现高可靠、高安全性自主解锁展开。</p> 
+<p>专家表示，为使全景相机获取元素丰富、比例协调的国旗照片，国旗展示系统需要在打开时伸出探测器，并提供较大的旗面尺寸和良好的旗面拍摄角度。在满足上述功能要求的同时，国旗展示系统还需采取轻小型化设计措施，对系统重量有极为严格的要求。</p> 
+<p>据介绍，嫦娥五号上升器点火起飞后，上升器经历垂直上升、姿态调整和轨道射入三个阶段，进入预定环月飞行轨道。随后，上升器将与环月等待的轨返组合体交会对接，将月球样品转移到返回器，后者将等待合适的月地入射窗口，做好返回地球的准备。</p>
+      <p data-role="editor-name">责任编辑：</p>
+</article>
+
+    </body>
+</html>
